@@ -37,19 +37,6 @@ exports.SYW = function (appId, appSecret) {
     return new Hashes.SHA256().hex(str);
   }
 
-  function getDateTimeUnix(date) {
-    var val = Math.floor(date.getTime() / 1000);
-    return val.toString();
-  }
-
-  function pad(number) {
-    var r = String(number);
-    if (r.length === 1) {
-      r = '0' + r;
-    }
-    return r;
-  }
-
   function getQueryString(query) {
     return '?' + querystring.stringify(query).replace(/%3A/g, ':');
   }
