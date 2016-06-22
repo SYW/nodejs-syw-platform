@@ -33,6 +33,6 @@ exports.SYW = function (appId, appSecret) {
   }
 
   return {
-    call: callEndpoint
+    callEndpoint: callEndpoint
   };
 };
