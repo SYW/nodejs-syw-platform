@@ -6,7 +6,7 @@ exports.SYW = function (appId, appSecret) {
     query = query || {};
     query.token = token;
     query.hash = generateAuthHash(token);
-    var uri = 'http://platform.shopyourway.com' + endpoint;
+    var uri = 'https://platform.shopyourway.com' + endpoint;
 
     var options = {
       uri: uri,
