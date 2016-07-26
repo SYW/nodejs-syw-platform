@@ -4,5 +4,25 @@
   "dependencies": {
     "jshashes": "1.0.3",
     "request": "2.72.0"
-  }
+  },
+  "description": "Proxy for accessing ShopYourWay developer platform APIs. For more details go to http://developers.shopyourway.com",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SYW/nodejs-syw-platform.git"
+  },
+  "keywords": [
+    "ShopYourWay",
+    "SYW"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SYW/nodejs-syw-platform/issues"
+  },
+  "homepage": "https://github.com/SYW/nodejs-syw-platform#readme"
 }
