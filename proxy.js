@@ -14,7 +14,7 @@ exports.callEndpoint = function(appId, appSecret, endpoint, query, token, callba
   };
 
   request(options, function (err, response, body) {
-    if (err || response.statusCode != 200) {
+    if (err) {
       var errMsg = err && err.message ? ' : ' + err.message : '';
       callback(new Error('Error while trying to call platform endpoint ' + endpoint + errMsg));
       return;
