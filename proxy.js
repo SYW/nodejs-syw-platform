@@ -13,7 +13,7 @@ exports.callEndpoint = function(appId, appSecret, endpoint, query, token, callba
     json: true
   };
 
-  request(options, function (err, response, body) {
+  request.get(options, function (err, response, body) {
     if (err) {
       var errMsg = err && err.message ? ' : ' + err.message : '';
       createError(errMsg);
@@ -21,7 +21,7 @@ exports.callEndpoint = function(appId, appSecret, endpoint, query, token, callba
     }
 
     if (response.statusCode != 200) {
-      var statusCodeMsg = 'the response status code is' + response.statusCode;
+      var statusCodeMsg = ' : the response status code is ' + response.statusCode;
       createError(statusCodeMsg);
       return;
     }
