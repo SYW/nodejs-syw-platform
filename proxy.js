@@ -13,12 +13,19 @@ exports.callEndpoint = function(appId, appSecret, endpoint, query, token, callba
     json: true
   };
 
-  request(options, function (err, response, body) {
+  request.get(options, function (err, response, body) {
     if (err) {
       var errMsg = err && err.message ? ' : ' + err.message : '';
-      callback(new Error('Error while trying to call platform endpoint ' + endpoint + errMsg));
+      createError(errMsg);
       return;
     }
+
+    if (response.statusCode != 200) {
+      var statusCodeMsg = ' : the response status code is ' + response.statusCode;
+      createError(statusCodeMsg);
+      return;
+    }
+
     callback(null, body);
   });
 
@@ -28,5 +35,9 @@ exports.callEndpoint = function(appId, appSecret, endpoint, query, token, callba
 
   function generateHash(str) {
     return new Hashes.SHA256().hex(str);
+  }
+
+  function createError(errMsg) {
+    callback(new Error('Error while trying to call platform endpoint ' + endpoint + errMsg));
   }
 };
